@@ -1,0 +1,211 @@
+\documentclass{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chemmacros}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{upgreek}
+\usepackage{url}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,250mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\usepackage[activate={true,nocompatibility},final]{microtype} % better font-rendering
+\usepackage[bitstream-charter]{mathdesign} % bitstream font
+\titleformat{\section}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont} % "bch" - Bitstream Character, "b" - bold 
+	{} % label
+	{0em} % horizontal separation between label and title body
+	{\hspace{-0.4pt}\Large \thesection\hspace{0.6em}} % code preceding the title
+	[] % additional code following the title body
+\titleformat{\subsection}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont}
+	{}
+	{0em}
+	{\hspace{-0.4pt}\large \thesubsection\hspace{0.6em}}
+	[]
+\titleformat{\subsubsection}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont}
+	{}
+	{0em}
+	{\hspace{-0.4pt}\thesubsubsection\hspace{0.6em}}
+	[]
+
+
+\chemsetup{ modules = all }
+%\usepackage[version=4]{mhchem}
+\chemsetup[redox]{pos=top} % oxid. numbers on top
+\usepackage{chemfig}
+
+\newlength{\drop}
+
+\begin{document}
+  \begin{titlepage}
+    \drop=0.1\textheight
+    \centering
+    \vspace*{\baselineskip}
+    \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+    \rule{\textwidth}{0.4pt}\\[\baselineskip]
+    {\LARGE Versuch 1--3 (RKE)\\[0.3\baselineskip] Reaktionskinetik -- Enzyme: Aktivität und Stabilität}\\[0.2\baselineskip]
+    \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+    \rule{\textwidth}{1.6pt}\\[\baselineskip]
+    \scshape
+    {Praktische Einführung in die Chemie\par}
+    \vspace*{2\baselineskip}
+    \vfill
+    {\scshape Versuchstag:} \        {\large 31.05.2017}\par
+  \end{titlepage}
+\section{Theorieteil}
+\subsection{Proteine}
+Proteine sind Moleküle, die aus typischerweise zwischen 100 bis 300 \emph{Aminosäuren}, die durch \emph{Peptidbindungen} verbunden sind, bestehen. Die Funktion, die ein Protein im Organismus ausführt hängt von der \emph{Struktur} des Proteins ab. Man unterscheidet \emph{vier} verschiedene Proteinstrukturen:
+\begin{enumerate}
+	\item \emph{Primärstruktur:} Abfolge der einzelnen Aminosäuren in der Peptidkette.
+	\item \emph{Sekundärstruktur:} Charakteristische Strukturen kürzerer Abschnitte des Proteins. Man unterscheidet z.B. zwischen $\alpha$-Helix und $\beta$-Faltblatt.
+	\item \emph{Tertiärstruktur:} Räumliche Anordung des gesamten Proteins.
+	\item \emph{Quartärstruktur:} Anlagerung mehrerer Proteine zu einem Komplex.
+\end{enumerate}
+Die meisten Proteine sind \emph{labil}, d.h. dass unter Einfluss bestimmter Umstände, wie z.B. einer \ch{pH}-Wertänderung, mechanischer Kräfte, Erwärmen und Erkalten, sie ihre \emph{Nativstruktur} und damit ihrere biologische Funktionalität verlieren. 
+\subsection{Enzyme}
+Enzyme sind in der Regel solche Proteine, die als \emph{Biokatalysatoren} in einem Organismus fungieren. Sie sind dafür verantwortlich biochemische Reaktionen zu beschleunigen oder gar erst zu ermöglichen. Neben der Peptidkette enhalten Enyzme sogenannte \emph{Cofaktoren}, die nicht aus Aminosäuren bestehen, für die katalytische Eigenschaft unabdingbar sind. Ist der Cofaktor \emph{fest} an dem Enzym gebunden, spricht man von der \emph{prosthetische Gruppe}, während man unter \emph{Coenzymen} solche mit \emph{transient gebundenen} (d.h. nicht fest) Cofaktoren versteht.
+\subsection{Lactatdehydrogenase}
+Ein wichtiges Enzym bei der \emph{anaeroben Glykolyse}, sprich Energiegewinnung der Zelle, ist die \emph{Lactatdehydrogenase} (LDH). Es katalysiert die Bildung von Lactat und \ch{NAD+} aus Pyruvat und NADH. Dies ist entscheidend in der Oxidation von Glycerinaldehyd-3-phosphat zu Glycerinaldehyd-3-phosphat-Dehydrogenase, bei der als Reduktionsäquivalent \ch{NAD+} zu NADH reduziert wird. Damit genug \ch{NAD+} vorhanden ist, dass diese Redoxreaktion stattfinden kann, wird dieses NADH mit Hilfe der LDH wieder zu \ch{NAD+} oxidiert. Das entstehende Lactat lässt sich nach intensiver Belastung der Muskulatur durch den Milchsäurespiegel nachweisen, bzw. messen. 
+\subsection{Reaktionskinetik}
+Die \emph{Reaktionskinetik} beschäftigt sich mit dem zeitlichen Ablauf einer Reaktion. Die grundlegende Größe ist die \emph{Reaktionsgeschwindigkeit}, die angibt, wieviele Teilchen pro Zeiteinheit in der chemischen Reaktion umgesetzt werden, was auch als \emph{Konzentrationsänderung} bezeichnet werden kann. Bei der Reaktion
+\begin{equation}\label{eq:ABCD}
+	a\text{ A} + b\text{ B} \ch{<=>} c\text{ C} + d\text{ D}
+\end{equation}
+ändern sich die Konzentrationen der Edukte und die der Produkte während der Reaktion. Läuft die Reaktion von links nach rechts, so nehmen die Konzentrationen von A und B fortwährend ab, während die der Stoffe C und D zunehmen. Die Rückreaktion verläuft analog.  
+
+Die Reationsrate $r$ ist als die zeitliche Änderung der Konzentration definiert, für Reaktion \ref{eq:ABCD} also:
+\begin{equation}
+	-\frac{1}{a}\cdot\frac{dc_{\text{A}}}{dt} = -\frac{1}{b}\cdot\frac{dc_{\text{B}}}{dt} = \frac{1}{c}\cdot\frac{dc_{\text{C}}}{dt} = \frac{1}{d}\cdot\frac{dc_{\text{D}}}{dt}
+\end{equation}
+Im nachfolgenden Versuch wird der Reaktionsverlauf der Reaktion
+\begin{equation}
+	\text{Pyruvat} + \text{NADH} + \ch{H+ <=> } \text{Lactat} + \ch{NAD+}
+\end{equation}
+betrachtet. Dazu wird mittels eines Phonometers die Oxidation von NADH zu \ch{NAD+} betrachtet. Die Änderung der Konzentrations kann nämlich über die \emph{Extinktion} ermittelt werden, die über das \texttt{Lambert-Beersche} Gesetz wie folgt gegeben ist:
+\begin{equation}\label{eq:lam}
+	E = -\log{\frac{I_1}{I_0}} = \epsilon\cdot d\cdot c
+\end{equation}
+Wobei $I_0$ die Intensität der einfallenden Lichts, $I_1$ die des austretenden, $epsilon$ der Extinktionskoeffizient, $d$ die Dicke der Probe und $c$ die Konzentration des Stoffes ist. Durch die \emph{Änderungsrate} von $E$ lässt sich die Geschwindigkeit $v$ der Umwandlung von NADH zu \ch{NAD+} berechnen. Die Konzentration $c$ ist nach \ref{eq:lam} gegeben als:
+\begin{subequations}
+	\begin{align}
+	c &= \frac{E}{\epsilon\cdot d} 
+	\end{align}
+	Woraus für $v=\frac{dc}{dt}$
+	\begin{align}
+		v = \frac{\Delta c}{\Delta t} &= \frac{\Delta E}{\Delta t\cdot\epsilon\cdot d} = A_V
+	\end{align}
+	folgt, mit $A_V$ als der \emph{Volumenaktivität}.
+\end{subequations}
+Da mit verdünnten Lösungen gearbeitet wird und die Volumenaktivität des Enzyms von Interesse ist, muss die Verdünnung berücksichtigt werden:
+\begin{equation}
+	A_V = \frac{\Delta E}{\Delta t\cdot\epsilon\cdot d}\cdot\frac{V_T}{V_P}
+\end{equation}
+Mit $V_P$ als dem Testvolumen und $V_P$ dem Probevolumen entspricht der Quotient dem \emph{Verdünnungsfaktor}.
+
+ 
+\section{Versuche}
+\subsection{Bestimmung der Reaktionsgeschwindigkeit der Reduktion von Pyruvat zu Lactat in Abhängigkeit der Konzentration aktiver LDH}
+\subsubsection{Aufgabenstellung}
+Der Versuch sollte die Auswirkung thermischer Zersetzung von LHD auf die Fähigkeit Pyruvat zu Lactat zu reduzieren.
+\subsubsection{Versuchsdurchführung}
+Zunächst wurde die Lösung ohne LDH-Lösung vorbereitet. Es wurden 9800 $\upmu$l anstatt von 980 $\upmu$l hergestellt. Dazu wurden zunächst 200 $\upmu$l NADH-Lösung mit einer Konzentration von 11 $\frac{\text{mg}}{\text{ml}}$ hinzugegeben. Nachfolgend 200 $\upmu$l Pyruvatlösung mit einer Konzentration von 2.75 $\frac{\text{mg}}{\text{ml}}$. Zuletzt werden 9,4 ml eines 67 mM Phosphatpuffers (\ch{pH} 7,2) hinzugegeben.
+
+Nun wurde die LDH-Lösung vorbereitet. Dazu wurde LDH aus einem Schweineherzmuskel so verdünnt, dass es eine Volumenaktivität von 2-4 $\frac{\text{U}}{\text{ml}}$ aufweist. In 9 seperate Eppendorf-Reaktionsgefäße wurden nun jeweils 20 $\upmu$l der Lösung gegeben. Diese wurden nun unterschiedlich Lange in einem Thermoblock erhitzt: 0,2,5,8,12,16,20,25,30 Minuten.
+
+Nach dem Erhitzen wurden sie zu jeweils 980 $\upmu$l der vorher hergestellten Lösung in eine Küvette gegeben, gut durchmischt und die Restaktivität bestimmt. Dies wurde mithilfe eines Spektrometers und eines Schreibers durchgeführt. Das Spektrometer musste dazu im abs- und rate-Modus eingestellt sein. Jedes mal wenn der Schreiber eine gewisse aber konstante Höhe (bei uns 6 cm) erreichte, wurde die Messung beendet und die Gerade vermessen.
+\subsubsection{Beobachtung}
+Wir erhielten aufgrund einer Fehlfunktion des Gerätes fremde Messwerte. Zudem waren dies nur 5 anstatt von 9.
+Wir erhielten folgende Steigungen auf dem Blatt des Schreibers.
+\begin{enumerate}
+	\item $\frac{32 ~\text{mm}}{34\text{ mm}}$
+	\item $\frac{12\text{ mm}}{19\text{ mm}}$
+	\item $\frac{\hfill 4\text{ mm}}{10\text{ mm}}$
+	\item $\frac{\hfill 4\text{ mm}}{10 \text{ mm}}$
+	\item $\frac{\hfill 7\text{ mm}}{20\text{ mm}}$
+\end{enumerate}
+\subsubsection{Auswertung}
+Die Enzymaktivität lässt sich mit folgender Formel berechnen:
+\begin{equation}
+	A_{v}=\frac{\Delta E}{\Delta t \epsilon d}\cdot \frac{V_{r}}{V_{\text{p}}}
+\end{equation}
+Hierbei ist $\Delta E$ die Änderung des Extinktionsfaktors, $\Delta t$ die verstrichene Zeit in Minuten, $\epsilon$ der Extinktionskoeffizient, $d$ die Strecke die das Licht durch die Probelösung zurücklegt, $V_{r}$ das Testvolument und $V_{p}$ das Probevolumen.
+In unserem Fall sind dies $\epsilon=\frac{3,3 \text{ ml}}{\upmu\text{mol}\cdot\text{cm}}$, $d=1$ cm, $V_{r}=1000\;\upmu\text{l}$ und $V_{p}=20\;\upmu\text{l}$.
+
+$\Delta E$ ergibt sich aus der y-Strecke (Zahl über dem Bruchstrich) geteilt durch 200 mm pro $\Delta E$. (Einstellung des Schreibers)
+Setzt man nun die 5 Messwerte in die oben genannte Gleichung ein, so erhält man für die Küvetten die folgenden 5 Enzymaktivitäten:
+
+\begin{figure}[h]
+	\centering
+	\caption{Berechnung der $\Delta E$, $\Delta t$ und $A_v$}
+\begin{tabular}{c r r}
+	$\Delta E$ & $\Delta t$ in min & $A_v$ in $\frac{\upmu\text{mol}}{\text{min}\cdot\text{ml}}$ \\ \hline
+   	0.16 & 0.566 &4.2781 \\
+     	0.06 & 0.316 &2.8708 \\
+    	0.02 & 0.166 &1.8182 \\ 
+     	0.02 & 0.166 & 1.8182 \\
+      	0.035 & 0.333 &1.5909
+\end{tabular}
+\end{figure}
+\begin{figure}
+	\centering
+	\caption{Messwerte über lineare Skala mit exponentiellem Curve fit}
+	\input{curve.tex}
+\end{figure}
+\begin{figure}\label{fig:log}
+	\centering
+	\caption{Messwerte über logarithmische Skala mit linearem Curve fit}
+	\input{curve2.tex}
+\end{figure}
+
+Die eben berechneten Werte können nun in ein x-$A_{v}$ Diagramm eingetragen werden. Man kann nun mithilfe einer Exponentialfunktion eine Kurve konstruieren (Diagramm 1) oder mit einer Geraden darstellen falls man die Logarithmischen Werte nimmt (Diagramm 2)
+Aus der Steigung der Gerade kann nun die Halbwertszeit hergeleitet werden:
+\begin{equation}
+	T_{\frac{1}{2}} = |\frac{\ln{2}}{k}| = 18.9384\text{ min}
+\end{equation}
+$k = -0.0336$ lässt sich aus Abbildung \ref{fig:log} auslesen.
+
+\newpage
+\subsubsection*{Reaktionsgleichung}
+\begin{figure}[h]
+	\centering
+	\caption{Reduktion von Pyruvat zu Lactat\protect\footnotemark}
+	\includegraphics[scale=.5]{LDH_reaction.pdf}
+	\end{figure}
+	\footnotetext{\url{https://commons.wikimedia.org/wiki/File:LDH_reaction.svg#/media/File:LDH_reaction.svg}}
+	\begin{figure}[h]
+	\centering
+	\caption{Oxidationszahlen}
+	\begin{tabular}{c c}
+			Linke Seite & Rechte Seite \\ \hline
+			O = -2 & H = 1 \\
+			C = 2 & O = -2 \\
+			& C = 0
+	\end{tabular}
+\end{figure}
+
+\section{Literatur}
+\begin{enumerate}[label=(\arabic*)]
+	\item \emph{Praktische Einführung in die Chemie
+für Studierende der Fachrichtungen
+Technische Biologie und Physik}. Praktikumsskript, Universität Stuttgart,
+SoSe 2017.  
+	\item Prof. Dr. D. Gudat. \emph{„Einführung in die Chemie für Naturwissenschaftler“}. Vorlesungsskript
+	\item \emph{Das Basiswissen der Chemie}. Charles E. Mortimer, Ulrich Müller. 12. Auflage
+\end{enumerate}
+\end{document}		

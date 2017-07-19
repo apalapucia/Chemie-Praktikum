@@ -1,0 +1,118 @@
+\documentclass[10pt]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chemmacros}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,250mm},
+ left=20mm,
+ }
+
+\usepackage[activate={true,nocompatibility},final]{microtype} % better font-rendering
+\usepackage[bitstream-charter]{mathdesign} % bitstream font
+
+
+\chemsetup{ modules = all }
+%\usepackage[version=4]{mhchem}
+\chemsetup[redox]{pos=top} % oxid. numbers on top
+\usepackage{chemfig}
+
+\newlength{\drop}
+
+\pagestyle{fancy}
+\lhead{Praktische Einführung in die Chemie}
+\chead{CHR}
+\begin{document}
+\section{Versuch}
+\subsection{Aufgabenstellung}
+DC-Chromatographie von Pflanzenfarbstoffen
+\subsection{Durchführung}
+Eine Grasprobe wurde zusammen mit Seesand und \ch{CaCO3} mit einem Mörser zerrieben, anschließend mit Aceton vermengt in ein Eisbad gestellt. Die Substanz wurde dann auf eine DC-Platte aufgetragen und mit einem Gemisch aus Ligroin, 2-Propanol und Wasser als Laufmittel entwickelt. 
+\subsection{Beobachtung}
+\begin{minipage}{.45\textwidth}
+	\captionof{figure}{Schematische Darstellung der DC}
+\begin{tikzpicture}
+	\draw[very thick] (0,7) -- (4,7);
+	\node at (-1,7) {Endlinie};
+	\draw (0, 6.75) -- (1.5, 6.75); 
+	\node at (2.5, 6.75) {$\beta$-Carotin};
+	\draw (0, 4.2) -- (1.5, 4.2);
+	\node at (2.7, 4.2) {Chlorophyll a};
+	\draw (0,3.8) -- ( 1.5, 3.8);
+	\node at (2.7, 3.8) {Chlorophyll b};
+	%\draw (0,3.6) -- ( 1.5, 3.6);
+	\draw (0,3.4) -- ( 1.5,3.4);
+	\node at (2.5, 3.4) {Xantophyll};
+	\draw[very thick] (0,0) -- (4,0);
+	\node at (-1,0) {Startlinie};
+	\draw[|<->|] (-1,.25) -- (-1,6.75) node[sloped, midway, above] {3,2 cm};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+	\captionof{figure}{Messwerte der DC mit $d_0 = 3,2$ cm}
+	\begin{tabular}{l r r}
+		Substanz & Probe & $R_f$ \\ \hline
+		$\beta$-Carotin & 3,15 cm & 0,98\\
+		Chlorophyll a & 2,00 cm & 0,63\\
+		Chlorophyll b & 1,70 cm & 0,53\\
+		Xantophyll & 1,40 cm & 0,44\\
+	\end{tabular}
+\end{minipage}
+\section{Versuch}
+\subsection{Aufgabenstellung}
+Trennung von Benzoesäure und Benzophenon mittels DC- und Säulen-Chromatographie.
+\subsection{Durchführung}
+Die Pipette wurde mit einem Wattepropfen verstopft und $\frac{4}{5}$ mit Kiesegel befüllt, worauf anschließend eine dünne Schicht Seesand kam. 
+Nun wurde die so gefüllte Pipette mit der Laufmittelmischung aus Cyclohexan/Essigsäureethylester im Verhältnis 2:1 mittels Handpumpe gewaschen, bis die komplette Säule nass war. Dann wurden einige wenige Tropfen von Benzoesäure und Benzophenon Mischung hineingegeben, wobei nach weiterem Pumpen immer wieder Laufmittel nachgefüllt wurde, damit die Säule nicht trocken lief. Die unten austretende Flüssigkeit wurde in insgesamt 12 Reagenzgläsern aufgefangen. Aus diesen wurde jeweils ein Punkt auf drei DC-Platten gebracht, die nach kurzer Zeit in einer Chromatographiekammer unter UV-Lich betrachtet wurden.
+
+Gleichzeitig zur Befüllung der Säule wurden die drei Referenzproben vorbereitet. Hier wurde die gleiche Laufmischung wie oben jeweils einmal mit Benzoesäure, einmal mit Benzophenon und abschließend mit einer Mischung aus sowohl Benzoesäure, also auch Benzophenon gemischt. Von jeder Mischung wurde ein Tropfen auf eine DC-Platte getupft und nach Behandlung in einer Chromatographiekammer unter UV-Lich betrachtet. 
+\newpage
+\subsection{Beobachtung}
+Die Abstände der 12 Proben der Säulen-Chromatographie:
+
+\begin{minipage}{.45\textwidth}
+	\captionof{figure}{Messwerte der Säulen-Chromatographie}
+\begin{tabular}{l c r r}
+	RG & Probe & Laufmittel & $R_f$ \\ \hline
+	1 & 3,00 cm & 4,05 cm & 0,74\\
+	2 & 2,95 cm & 4,05 cm & 0,73\\
+	3 & 2,95 cm & 4,05 cm & 0,73\\
+	4 & 3,05 cm & 4,05 cm & 0,75\\
+	5 & 2,45 cm & 3,45 cm & 0,71\\
+	6 & 2,40 cm & 3,50 cm & 0,69\\
+	7 & 2,40 cm & 3,40 cm & 0,71\\
+	8 & 2,55 cm & 3,50 cm & 0,73\\
+	9 & 2,50 cm & 3,35 cm & 0,75\\
+	10 & 2,40 cm & 3,30 cm & 0,73\\
+	11 & 2,45 cm & 3,35 cm & 0,73\\
+	12 & 2,45 cm & 3,30 cm & 0,74 
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+	\captionof{figure}{Messwerte der Referenzproben}
+	\begin{tabular}{l l c r}
+		Substanz & Probe & Laufmittel & $R_f$ \\ \hline \hline
+		\multirow{2}{*}{\parbox[t]{3cm}{Benzoesäure +\\ Benzophenon}} & 2,60 cm & 4,40 cm & 0,59\\
+							   & 3,90 cm & 4,40 cm & 0,89\\ \hline
+		Benzosäure & 2,30 cm & 4,48 cm & 0,51\\
+		Benzophenon & 3,85 cm & 4,10 cm & 0,94  
+	\end{tabular}
+\end{minipage}
+\vspace{5mm}
+
+Bei der Säulen-Chromatographie ist ein Minimum der $R_f$-Werte im 5 bis 7 Reagenzglases erkennbar. Die Trennung des anderen Stoffes ist nicht klar ersichtlich. 
+\end{document}		

@@ -1,0 +1,257 @@
+\documentclass{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chemmacros}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{titlesec}
+
+\usepackage[activate={true,nocompatibility},final]{microtype} % better font-rendering
+\usepackage[bitstream-charter]{mathdesign} % bitstream font
+\titleformat{\section}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont} % "bch" - Bitstream Character, "b" - bold 
+	{} % label
+	{0em} % horizontal separation between label and title body
+	{\hspace{-0.4pt}\Large \thesection\hspace{0.6em}} % code preceding the title
+	[] % additional code following the title body
+\titleformat{\subsection}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont}
+	{}
+	{0em}
+	{\hspace{-0.4pt}\large \thesubsection\hspace{0.6em}}
+	[]
+\titleformat{\subsubsection}[hang]{
+	\usefont{T1}{bch}{b}{n}\selectfont}
+	{}
+	{0em}
+	{\hspace{-0.4pt}\thesubsubsection\hspace{0.6em}}
+	[]
+
+
+\chemsetup{ modules = all }
+\chemsetup[redox]{pos=top} % oxid. numbers on top
+
+\newcommand{\titel}{Praktische Einführung in die Chemie}
+\newcommand{\versuch}{1-6 (ROG)}
+\newcommand{\subtitel}{Redoxgleichgewichte}
+\newcommand{\vtag}{Versuchstag: 19.04.2017}
+
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+		\Large{\titel} \\ \vspace{30pt}
+		\LARGE{\textbf{Versuche \versuch}} \\
+		\LARGE{\textbf{\subtitel}} \\ 
+		\vfill
+		\vspace{100pt}
+		\vtag
+	\end{center}
+\end{titlepage}
+\section{Theorieteil}
+Redoxreaktionen lassen sich in zwei Teilreaktionen, die \emph{Oxidation} und die \emph{Reduktion}, aufteilen, die stets zusammen ablaufen. Dabei umfasst die Oxidation die \emph{Abgabe} von Elektronen, die Reduktion die \emph{Aufnahme} von Elektronen. Die an der Reaktion beteiligten Stoffe lassen sich als Redox-Paar in die Kategorien \emph{Oxidationsmittel} als dem Stoff, der reduziert wird (also Elektronen aufnimmt) und \emph{Reduktionsmittel} als dem, der oxidiert wird (also Elektronen abgibt). \\
+Die Stärke eines Stoffes als Oxidations- respektive Reduktionsmittels lässt sich relativ zu anderen anhand der sogenannten \emph{elektrochemischen Spannungsreihe} angeben. Dieses Normalpotential eines Stoffes wird relativ zur Normal-Wasserstoffelektrode, die als \ch{2 H+ + 2 e- <=> H2} bei 0V $E^0$ festgelegt ist.  \\
+Mit Hilfe der \emph{Nernst-Gleichung}~\ref{eq:nernst} lässt sich das Potential eines Redox-Paares \ch{Ox + z e- <=> Red} berechnen.
+\begin{equation} \label{eq:nernst}
+	E = E^0 + \frac{RT}{zF}\cdot \ln{\frac{c(Ox)}{c(Red)}}
+\end{equation}
+Das Aufstellen der Reaktionsgleichung einer Redoxreaktion erfolgt stets nach dem Schema, dass zuerst die Oxidationszahlen der beteiligten Spezies herauszufinden ist, um anschließend die zwei Teilreaktionen Oxidation und Reduktion zuerst separat zu betrachten, nach dem Zusammfügen die Ladung auszugleichen und abschließend die Stöchometrie zu überprüfen. Wie die Ladung ausgeglichen wird, hängt vom vorliegenden Mileau - also sauer (mit \ch{H+}) oder alkalisch (mit \ch{OH-}) - ab. \\
+Man unterscheidet zwischen zwei besonderen Formen der Redoxreaktion: die Synproportionierung, bei der Reaktanden gleicher Spezies mit unterschiedlichen Oxidationszahlen zu einem Atom der mittleren Oxidationsstufe reagieren, und die Disproportionierung, bei der konträr zur Synproportionierung ein Reaktand zu zwei Produkten unterschiedlicher Oxidationsstufe reagiert.
+\section{Versuche}
+\subsection{Elektrochemische Spannungsreihe}
+\subsubsection{Aufgabenstellung}
+Eine qualitative Einschätzung des Standardpotentials von vier Metallen: Magensium, Kupfer, Nickel, Zink.
+\subsubsection{Versuchsdurchführung}
+\begin{enumerate}[label=\alph*)]
+	\item Um einen Einblick in die Spannungsreihe zu bekommen wurden 4 verschiedene Metalle in verdünnte Salzsäure gegeben. Dafür wurden vier Reagenzgläser zu erst mit 1 cm Wasser und danach mit 1 cm Salzsäure befüllt. Danach wurde jeweils das zu untersuchende Metall hinzu gegeben. In diesem Fall wurde Magnesium, Zink, Nickel und Kupfer untersucht.
+	\item Diesmal wurde zu erst Zink in drei Reagenzgläser getan. Danach wurde eins der Gläser mit konzentrierter Salzsäure, eins mit verdünnter Salpetersäure (1:1) und das letzte mit konzentrierter Salpetersäure befüllt. Anschließend wurde unter selber Vorgehensweise Kupfer betrachtet.
+\end{enumerate}
+\subsubsection{Beobachtung}
+Beim Magnesium fand bei Kontakt mit der Säure eine Gas-, sowie Schaumentwicklung statt und der Stoff wurde zersetzt, bis er vollständig aufgelöst war. 
+Das Kupfer reagierte nicht mit der Salzsäure. Die Nickelprobe reagierte schwächer als das Magnesium, nach kurzer Zeit fand auch hier eine leichte Gasentwicklung statt. Am Zink bildeten sich Blaßen. \\
+Die Reaktion von Zink mit Salzsäure war im zweiten Teil des Versuchs, dem Beträufeln der verschiedenen Säuren, gleich wie zuvor; die verdünnte Salpetersäure jedoch erzeugte einen bräunlichen Dampf, der bei der unverdünnten Säure dunkler und die gesamte Reaktion stärker ausfiel. Auch das Kupfer reagierte wie zuvor nicht mit der Salzsäure, während die verdünnte Salpetersäure eine leichte Gasbildung mit bläulicher Verfärbung des Materiales hervorrief. Bei der unverdünnten Salpetersäure kam es zu einer grünen Färbung und ein leichtes Schäumen, sowie ein gelber Dampf waren zu beobachten.
+\subsubsection{Auswertung}
+Die stattfindenden Reaktion:\\
+Mit \emph{verdünnter} Salzsäure
+\begin{itemize}
+	%\item Magnesium: \ox[align=right]{2,Mg^2+}\ch{+ 2 e- ->}\ox{0,Mg}
+	%\item Kupfer: \ox[align=right]{2, Cu^2+}\ch{+ 2 e- ->}\ox{0,Cu}
+	%\item Nickel: \ox[align=right]{2, Ni^2+}\ch{+ 2 e- ->}\ox{0,Ni}
+	%\item Zink: \ox[align=right]{2, Zn^2+}\ch{+ 2 e- ->}\ox{0,Zn}
+	\item Magnesium: \\
+		 Ox.: \ox{0,Mg} \ch{<=>} \ox{2,Mg^2+} + \ch{2 e-} \\
+		 Red.: \ch{2 H+ + 2 e- <=>} \ox{0,H2} \\
+		 Redox: \ox{0,Mg} + \ch{2 H+ <=>} \ox{2,Mg^2+} + \ox{0,H2}
+	\item Kupfer: Keine Reaktion
+	\item Nickel: \\
+		Ox.: \ox{0,Ni} \ch{<=>} \ox{2,Ni^2+} + \ch{2 e-} \\
+		Red.: \ch{2 H+ + 2 e- <=>} \ox{0,H2} \\
+		Redox: \ox{0,Ni} \ch{+ 2 H+ <=>} \ox{2,Ni^2+} + \ox{0,H2}
+	\item Zink: \\
+		Ox.: \ox{0,Zn} \ch{<=>} \ox{2,Zn^2+} + \ch{2 e-} \\
+		Red.: \ch{2 H+ + 2 e- <=>} \ox{0,H2} \\
+		Redox: \ox{0,Zn} \ch{+ 2 H+ <=>} \ox{2,Zn^2+} + \ox{0,H2}
+
+\end{itemize}
+\newpage
+Mit \emph{konzentrierter} Salzsäure:
+\begin{itemize}
+	\item Zink: \\
+		Ox.: \ox{0,Zn} \ch{<=>} \ox{2,Zn^2+} + \ch{2 e-} \\
+		Red.: \ch{2 H+ + 2 e- <=>} \ox{0,H2} \\
+		Redox: \ox{0,Zn} \ch{+ 2 H+ <=>} \ox{2,Zn^2+} + \ox{0,H2}
+	\item Kupfer: Keine Reaktion
+\end{itemize}
+Mit \emph{verdünnter} Salpetersäure:
+\begin{itemize}
+	\item Zink: \\
+		Ox.: \ox{0,Zn} \ch{<=>} \ox{2,Zn^2+} + \ch{2 e-} \\
+		Red.: \ox{5,N}\ox{-2,O3^-} +  \ch{4 H+ + 3 e- <=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} \\
+		Redox.:  2\ox{5,N}\ox{-2,O3^-} + 8 \ch{H+} + 3\ox{0,Zn} \ch{<=>} 2\ox{2,N}\ox{-2,O} + 4 \ox{1,H2}\ox{-2,O} + 3\ox{2,Zn^3+} \\
+		Gasentwckl: 2 \ox{2,N}\ox{-2,O} + \ox{0,O2} \ch{<=>} 2 \ox{4,N}\ox{-2,O2}
+	\item Kupfer: \\
+		Ox.: \ox{0,Cu} \ch{<=>} \ox{2,Cu^2+} + \ch{2 e-} \\
+		Red.: \ox{5,N}\ox{-2,O3^-} +  \ch{4 H+ + 3 e- <=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} \\
+		Redox.:  2\ox{5,N}\ox{-2,O3^-} + 8 \ch{H+} + 3\ox{0,Cu} \ch{<=>} 2\ox{2,N}\ox{-2,O} + 4 \ox{1,H2}\ox{-2,O} + 3\ox{2,Cu^3+} \\
+		Gasentwckl: 2 \ox{2,N}\ox{-2,O} + \ox{0,O2} \ch{<=>} 2 \ox{4,N}\ox{-2,O2}
+
+\end{itemize}
+Mit \emph{konzentrierter} Salpetersäure:
+\begin{itemize}
+	\item Zink: \\
+		Ox.: \ox{0,Zn} \ch{<=>} \ox{2,Zn^2+} + \ch{2 e-} \\
+		Red.: \ox{5,N}\ox{-2,O3^-} +  \ch{4 H+ + 3 e- <=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} \\
+		Redox.:  2\ox{5,N}\ox{-2,O3^-} + 8 \ch{H+} + 3\ox{0,Zn} \ch{<=>} 2\ox{2,N}\ox{-2,O} + 4 \ox{1,H2}\ox{-2,O} + 3\ox{2,Zn^3+} \\
+		Gasentwckl: 2 \ox{2,N}\ox{-2,O} + \ox{0,O2} \ch{<=>} 2 \ox{4,N}\ox{-2,O2}
+	\item Kupfer: \\
+		Ox.: \ox{0,Cu} \ch{<=>} \ox{2,Cu^2+} + \ch{2 e-} \\
+		Red.: \ox{5,N}\ox{-2,O3^-} +  \ch{4 H+ + 3 e- <=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} \\
+		Redox.:  2\ox{5,N}\ox{-2,O3^-} + 8 \ch{H+} + 3\ox{0,Cu} \ch{<=>} 2\ox{2,N}\ox{-2,O} + 4 \ox{1,H2}\ox{-2,O} + 3\ox{2,Cu^3+} \\
+		Gasentwckl: 2 \ox{2,N}\ox{-2,O} + \ox{0,O2} \ch{<=>} 2 \ox{4,N}\ox{-2,O2}
+
+
+	
+
+\end{itemize}
+Die Reaktionsgeschwindigkeit und die Heftigkeit derselben lassen auf folgende Ordnung der Standardpotentiale schließen, die mit den tatsächlichen Werten übereinstimmt:
+\begin{equation}
+	\underbrace{E^{\ch{Cu}}_0}_{+0,35 \text{ V}} > \underbrace{E^{\ch{Ni}}_0}_{-0,23\text{ V}} > \underbrace{E^{\ch{Zn}}_0}_{-0,76\text{ V}} > \underbrace{E^{\ch{Mg}}_0}_{-2,362 \text{ V}}
+\end{equation}
+\subsection{Abhängigkeit des Redoxpotentials vom \pH-Wert}
+\subsubsection{Versuchsdurchführung}
+\begin{enumerate}[label=\alph*)]
+	\item Als erstes wurde eine \ch{KNO3}-Lösung mit ein wenig Schwefelsäure in ein Reaktionsglas gegeben. Die \ch{KNO3}-Lösung wurde zuvor im Verhältnis 1:1 mit Wasser verdünnt (auch alle weitere Lösungen in diesem Verhältnis). Danach wurde eine \ch{(NH4)2Fe[SO4]2}-Lösung hinzu gegeben und mit konzentrierter Schwefelsäure unterschichtet. Jedoch wurde die konzentrierte  Schwefelsäure nicht unterschichtet sondern nur dazugegeben.
+	\item Hier wurde etwas \ch{Fe[SO4]} in wenig Wasser gelöst und mit einer Spatelspitze \ch{KNO3} und \ch{3 NaOH}-Plätzchen vermischt. Nun wurde ein Indikatorpapier leicht angefeuchtet und an die Unterseite eines Uhrglases geklebt. Das Becherglas wurde nun mit dem Uhrglas bedeckt und später noch ein wenig erhitzt.
+ \end{enumerate} 
+ \subsubsection{Beobachtung}
+In Teil a) war eine Gasbildung zu beobachten, sowie eine gelb-grüne Verfärbung.
+Die gelbe Lösung des \ch{H2O} und \ch{Fe[SO4]} zeigte keine Veränderung beim, bzw. nach dem Hinzufügen des \ch{KNO3}. Auch das Indikatorpapier in Teil b) blieb farblich unverändert, selbst nach erwärmen der Lösung unter dem Bunsenbrenner.
+\subsubsection[Auswertung]{Auswertung\footnote{Aus Recherchen gewonne Reaktionsgleichungen, da uns der Versuch mißlang.}}
+\begin{enumerate}[label=\alph*)]
+\item Reaktionen: \\
+	Ox.: \ox{2,Fe^2+} \ch{<=>} \ox{3,Fe^3+} + \ch{e-} \\
+	Red.: \ox{5,N}\ox{-2,O3^-} + 4 \ch{H+} \ch{ + 3 e- <=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} \\
+	Redox: \ox{5,N}\ox{-2,O3^-} + 4 \ch{H+} + 3 \ox{2,Fe^2+} \ch{<=>} \ox{2,N}\ox{-2,O} + 2 \ox{1,H2}\ox{-2,O} + 3 \ox{3,Fe^3+} \\
+	Komplex: \ch{[Fe(H2O)_{(aq)}]^3+ + NO3_{(aq)} <=> [Fe(H2O)5NO]^3+ _{(aq)} + H2O}
+\item Reaktionen: \\
+	Ox.: \ox{2,Fe^2+} + 3 \ox{-2,O}\ox{1,H^-} \ch{<=>} \ox{3,Fe}(\ox{-2,O}\ox{1,H})$_3$ \ch{+ e-} \\
+       Red.: \ox{5,N}\ox{-2,O3^-} + 6 \ox{1,H2}\ox{-2,O} + \ch{8 e- <=>} 9 \ox{-2,O}\ox{1,H^-} + \ox{-3,N}\ox{1,H3} \\
+       Redox.: 8 \ox{2,Fe^2+} + 15 \ox{-2,O}\ox{1,H^-} + \ox{5,N}\ox{-2,O3^-} + 6 \ox{1,H2}\ox{-2,O} \ch{<=>} 8 \ox{3,Fe}(\ox{-2,O}\ox{1,H})$_3$ + \ox{-3,N}\ox{1,H3} \\
+       Indikator: \ch{NH3 + H2O <=> NH4+ + OH-}
+\end{enumerate}
+\subsubsection{Fehlerbetrachtung}
+Die Versuche führten zu keinem deutbaren Ergebnis, in Teil a) wurde beim Unterschichten mit Schwefelsäure das Reagenzglas nicht flach genug gehalten, sodass die Schwefelsäure nicht unter das Gemisch gelangen konnte. In Teil b) wurden wahrscheinlich falsche Stoffmengen benutzt. So konnte auch das Erhitzen durch den Bunsenbrenner keine Ergebnisse liefern. 
+ \subsection{Amphoterie, Dis- und Synproportionierung}
+ \subsubsection{Versuchsdurchführung}
+ \begin{enumerate}[label=\alph*)]
+	 \item Es wurde eine \ch{KMnO4}-Lösung zusammen mit einer alkalischen \ch{MnSO4}-Lösung vermischt. Wobei erst die \ch{KMnO4}-Lösung auf ca. 2 cm Höhe in ein Reagenzglas gefüllt wurde und danach die \ch{MnSO4}-Lösung zugegeben wurde. Um die \ch{MnSO4}-Lösung herzustellen wurde eine Spatelspitze \ch{MnSO4} mit einer NaOH-Perle vollständig in Wasser aufgelöst.
+	 \item Nun wurden zu einer 30\% \ch{H2O2}-Lösung (ca. 1 cm hoch im Reagenzglas) eine Spatelspitze \ch{MnO2} dazu gegeben. Dabei entsteht ein Gas in welches ein glimmender Span gehalten wurde.
+	 \item Es wurde eine stark verdünnte 30\% \ch{H2O2}-Lösung (ca. 1 cm hoch) mit Hilfe von \ch{NaOH} stark alkalisch gemacht. Danach wurden einige Tropfen einer \ch{MnSO4}-Lösung zu gegeben.
+	 \item Hier wurde eine ca. 1 cm hohe \ch{KMnO4}-Lösung in ein Reagenzglas gegeben und dann mit wenigen Tropfen Schwefelsäure angesäuert. Zusätzlich wurde diese Lösung noch mit einer 30\% \ch{H2O2}-Lösung versetzt.
+ \end{enumerate}
+ \subsubsection{Beobachtung}
+ \begin{enumerate}[label=\alph*)]
+	 \item Die lilafarbene \ch{KMnO4}-Lösung wurde nach Vermischung mit \ch{MnSO4}-Lösung und \ch{NaOH}-Perlen zunächst zu einer gelb-braunen Mischung. Nach weiterer Hinzugabe dieser zwei Substanzen war ein leichter Grünton erkennbar.
+	 \item Nach hinzugabe des \ch{MnO2} zur start verdünnten 30\% \ch{H2O2}-Lösung war eine starke Gasentwicklung zu beobachten. Der Span glimmte unter Einströmen des entwickelten Gases stark auf. 
+	 \item Die \ch{NaOH} Blättchen wurden unter leichter Gasentwicklung im \ch{H2O2} gelöst. Beim Zusammenmischen der milchig-weißen \ch{MnSO4}-Lösung wurde die Mischung schwarz und schäumte stark auf.
+	 \item Die Ansäuerung der \ch{KMnO4}-Lösung mit Schwefelsäure zeigte keine sichtbare Veränderung. Das Hinzutropfen von \ch{H2O2} führte zu einer starken Aufschäumung und einer anschließend schwarzen Färbung.
+ \end{enumerate}
+ \subsubsection{Auswertung}
+ \begin{enumerate}[label=\alph*)]
+	 \item Das Reaktionsprodukt nimmt eine dunkelgrüne Farbe an.\\
+	Ox.: \ox{2,Mn^2+} + 4\ox{-2,O}\ox{1,H^-} \ch{<=>} \ox{4,Mn}\ox{-2,O2} + 2\ox{1,H2}\ox{-2,O} + \ch{2 e-} \\
+	Red.: \ox{7,Mn}\ox{-2,O4^-} + 2\ox{1,H2}\ox{-2,O} \ch{+ 3 e- <=>}\ox{4,Mn}\ox{-2,O2} + 4\ox{-2,O}\ox{1,H^-} \\
+	\noindent\rule{\textwidth}{0.4pt}
+	3\ox{2,Mn^2+} + 2\ox{7,Mn}\ox{-2,O4^-} + 4\ox{-2,O}\ox{1,H^-} \ch{<=>} 5\ox{4,Mn}\ox{-2,O2} + 2\ox{1,H2}\ox{-2,O} 
+	 \item Die Gasentwicklung kann durch eine Redoxreaktion beschrieben werden, welche zugleich eine Disproportionierung von Sauerstoff darstellt. \\
+		 Ox.: \ox{1,H2}\ox{-1,O2}\ch{<=>}\ox{0,O2}\ch{+ 2 H+ + 2 e-} \\
+		 Red.: \ox{1,H2}\ox{-1,O2} + \ch{2 e- <=>} 2\ox{-2,O}\ox{1,H^-} \\ 
+\noindent\rule{\textwidth}{0.4pt}
+2\ox{1,H2}\ox{-1,O2} \ch{<=>} 2\ox{1,H2}\ox{-2,O} + \ox{0,O2} \\
+Der glimmende Span dient dazu um zu zeigen, dass es sich bei dem frei werdenden Gas um Sauerstoff handelt(Glimmspanprobe).
+\item Nachdem eine stark verdünnte H\textsubscript{2}O\textsubscript{2} mit NaOH gemischt wurde, konnte eine leichte Blasenbildung festgestellt werden. Diese wird durch:\\
+	2\ox{-2,O}\ox{1,H^-} + 2\ox{1,H2}\ox{-1,O2} \ch{<=>} 2\ox{1,H2}\ox{-2,O} + 2\ox{-1,O}\ox{-1,O}\ox{1,H^-} \\
+	2\ox{1,Na^+} + 2\ox{-1,O}\ox{-1,O}\ox{1,H^-} \ch{<=>} 2\ox{1,Na}\ox{-2,O}\ox{1,H} + \ox{0,O2}\\
+produziert.\\
+Nachdem die MnSO\textsubscript{4} -Lösung dazugegeben wurde beginnt die Lösung zu schäumen und verfärbt sich schwarz.\\
+Ox.: \ox{2,Mn^2+} +\ox{-2,O}\ox{1,H^-} \ch{<=>} \ox{4,Mn}\ox{-2,O2} + 2\ox{1,H2}\ox{-2,O2} + \ch{2 e-} \\ 
+Red.: \ox{1,H2}\ox{-1,O2} +2\ch{e- <=>} 2\ox{-2,O}\ox{1,H^-} \\
+\noindent\rule{\textwidth}{0.4pt}
+\ox{2,Mn^2+} + \ox{1,H2}\ox{-1,O2} + 2\ox{-2,O}\ox{1,H^-} \ch{<=>} \ox{4,Mn}\ox{-2,O2} + 2\ox{1,H2}\ox{-2,O} \\
+Die Farbveränderung kommt von dem neu gebildetem MnO\textsubscript{2}. Zusätzlich läuft noch die Reaktion: 2\ch{H2O2 <=> O2 + 2H+} ab, welches die Blasenbildung erklärt. Die OH\textsuperscript{-} Ionen reagieren mit den 2H\textsuperscript{+} zu Wasser.\\
+Das Wasserstoffperoxid fungiert in Teil c wie auch in Teil d als Katalysator.
+\item Nachdem die KMnO\textsubscript{4} -Lösung mit ein paar Tropfen Schwefelsäure angesäuert wurde pasiert fürs erste nichts. Die H\textsubscript{2} aus der Schwefelsäure gehen in Lösung und bilden H\textsubscript{3}O\textsuperscript{+} mit den H\textsubscript{2}O Molekülen. Beobachtet wurde, dass nach Zugabe von Wasserstoffperoxid es zu erst schäumte und danach sich schwarz färbt und zum Schluss das Volumen der Flüssigkeit sich verringerte. Das schäumen kommt daher, dass wenn Mangan mit einer verdünnten Säure vermischt wird dabei Wasserstoffbildung entsteht. Des weiteren entsteht durch Zugabe von Wasserstoffperoxid Braunstein welches die Farbänderung erklärt und das Schäumen weiter anregt durch Bildung von Sauerstoff.\\ \\
+	Ox.: \ox{1,H2}\ox{-1,O2} \ch{<=>} \ox{0,O2} + \ch{2 H+ + 2 e-} \\
+  Red.: \ox{7,Mn}\ox{-2,O4^-} + \ch{4 H+ + 5 e- <=>} \ox{2,Mn^2+} + 4\ox{1,H2}\ox{-2,O} \\ 
+\noindent\rule{\textwidth}{0.4pt}
+2\ox{7,Mn}\ox{-2,O4^-} + 5\ox{1,H2}\ox{-1,O2} + \ch{6 H+ <=>} 2\ox{2,Mn^2+} + 8\ox{-1,H2}\ox{-2,O} + 5\ox{0,O2} \\
+Die Volumenänderung lässt sich durch die Bildung der Gase H\textsubscript{2} und O\textsubscript{2} erklären.
+\end{enumerate}
+ \subsection{Redox-Titration einer \ch{Cu^2+}-Kationen-Lösung}
+ \subsubsection{Versuchsdurchführung}
+Nachdem wir die Analyselösung von unserem Assistenten bekommen haben, haben wir diese bis auf 100 ml mit demineralisiertem Wasser aufgefüllt. Davon wurden dann mit Hilfe einer 25 ml Vollpipette 25 ml abpipettiert und wieder mit demineralisiertem Wasser auf 150 ml aufgefüllt. Diese Lösung wiederum wurde mit ca. 5 ml Essigsäure und 2 g Kaliumiodid welches in 10 ml demineralisiertem Wasser gelöst wurde versetzt. Nun wurde ein Reagenzglas auf $\frac{1}{3}$ gefüllt mit Wasser und dann ca. mit 2 Spatelspitzen Stärkepulver versetzt (gesättigte Lösung). Dieses wurde dann über dem Bunsenbrenner erhitzt wobei darauf geachtet werden musste, dass kein Siedeverschluss entsteht. Nachdem diese erstellte Lösung dann in die vorherige gekippt wurde, färbte sich die neue Lösung blau.
+Nun wurde die Bürette bis zur Nullmarke mit \ch{Na2S2O3}-Maßlösung befüllt. Die vorher verdünnte Analysenlösung wurde nun solange titriert mit der \ch{Na2S2O3}-Maßlösung bis ein Umschlag von blau nach farblos festellbar war, und dieser auch dauerhaft war. Das ganze wurde noch einmal wiederholt um das Ergebnis aus der ersten Messung mit der zweiten zu bestätigen. 
+\subsubsection{Messwerte}
+\begin{table}[h]
+	\caption{Messwerte der Titrationversuche}
+	\centering
+\begin{tabular}{l l l r}
+	Versuch & Startvolumen & Endvolumen & $\Delta$ V\\ \hline
+	1 & 0 ml & 14,95 ml & 14,95 ml \\
+	2 & 0 ml & 13,975 ml & 13,975 ml
+\end{tabular}
+\end{table}
+Aus den zwei Versuchen ergibt sich als Mittelwert:
+\begin{equation}
+	\overline{V} = \frac{14,95\text{ ml} + 13,975\text{ ml}}{2} = 14,4625\text{ ml}
+\end{equation}
+Da am Äquivalenzpunkt gilt: $n(\ch{OH-}) = n(\ch{H+}) = c\cdot \overline{V}$ folgt:
+\begin{equation}
+	0,1\frac{\text{ mol}}{\text{l}}\cdot 14,4625\text{ ml} = 1,44625\text{ mmol}
+\end{equation}
+Da jeweils 25 ml der \ch{Cu^2+}-Lösung abpipettiert wurde, muss, um auf die Teilchenzahl in der Ausgangslösung rückzuschließen, dieses Ergebnis mit 4 multipliziert werden.
+\begin{equation}
+	1,44625\text{ mmol}\cdot 4 = 5,785\text{ mmol}
+\end{equation}
+\subsubsection{Fehlerbetrachtung}
+Vorweg ist zu sagen, dass beim zweiten Titrationsversuch die Ansäuerung der \ch{Cu^2+} mit Essigsäure zuerst vergessen wurde und diese erst nachträglich hinzugefügt wurden. Die Abweichung vom Sollwert beträgt: 
+\begin{equation}
+       	\frac{5,785\text{ mmol}}{5,647 \text{ mmol}} = 2,44 \%
+\end{equation}
+Außer der oben erwähnten, eindeutig unsauberen Durchführung sind weitere Ungenauigkeiten durch das Abfüllen der Maßlösung, Ablesen des Volumens und möglicherweiße verspätete Reaktion beim Erreichen des Äquivalenzpunkts nicht zu vermeiden und tragen somit zum Meßfehler bei. \\
+Die empirische Standardabweichung lässt sich mit $s = \sqrt{\frac{1}{n}\sum_{i=1}^n(x_i-\overline{x})^2} \approx 0,4875\text{ ml}$ berechnen. Somit wäre das gemittelte Volumen $14,4625\text{ ml} \pm 0,4875 \text{ ml}$ und die Stoffmenge $4\cdot 0,1\frac{\text{mol}}{\text{l}}\cdot (14,4625 \text{ ml}\pm 0,4875\text{ ml})=5,785 \text{ mmol}\pm 0,195 \text{ mmol}$. Diese Herangehensweise ist allerdings bei Messreihen mit nur 2 Versuchen fragwürdig, besser ist den Fehler mit $s = \frac{x_{max}-x_{min}}{2} = 0,4875 \text{ ml}$ anzugeben, was aber zu einem vergleichbaren Wert führt. Der Messfehler trägt also nach dieser Überlegung $\approx\pm 0,2$ mmol zur Abweichung bei, was $3,37 \% $ entspricht. 
+
+\begin{thebibliography}{9}
+	\bibitem{skript}
+		\emph{Praktische Einführung in die Chemie
+für Studierende der Fachrichtungen
+Technische Biologie und Physik}. Praktikumsskript, Universität Stuttgart,
+SoSe 2017.  
+\bibitem{skript2}
+	Prof. Dr. D. Gudat. \emph{„Einführung in die Chemie für Naturwissenschaftler“}. Vorlesungsskript
+\end{thebibliography}
+\end{document}		
